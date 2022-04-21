@@ -48,8 +48,8 @@ int gcd3(int a, int b) {
     return gcd3(b, a % b);
 }
 
-/* Without recursive
-int gcd(int a, int b) {
+// Without recursive
+int gcd4(int a, int b) {
     int tmp;
     while(b != 0) {
         tmp = a % b;
@@ -58,19 +58,18 @@ int gcd(int a, int b) {
     }
     return a;
 }
- */
 
 ///Using built-in function
 #include <algorithm>
-int gcd4(int a, int b) {
+int gcd5(int a, int b) {
     return std::__gcd(a,b);
 }
 
 int main(){
-    int a = 5, b = 9;
+    int a = 7, b = 9;
     printf("\ngcd1(%d, %d) = %d", a, b, gcd1(a,b));
     printf("\ngcd2(%d, %d) = %d", a, b, gcd2(a,b));
     printf("\ngcd3(%d, %d) = %d", a, b, gcd3(a,b));
     printf("\ngcd4(%d, %d) = %d", a, b, gcd4(a,b));
-    printf("\ngcd5(%d, %d) = %d", a, b, std::__gcd(a,b));
+    printf("\ngcd5(%d, %d) = %d", a, b, gcd5(a,b));
 }
